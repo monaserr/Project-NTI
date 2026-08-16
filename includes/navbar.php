@@ -1,69 +1,89 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
 
-    <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $pageTitle ?? "Tech Journey" ?> | Tech Journey</title>
+    <link rel="stylesheet" href="css/style.css">
+     <link
+        rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/eventstyle.css">
+    <link rel="stylesheet" href="css/resourseCss.css">
+    <link rel="stylesheet" href="css/trackCss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        <a class="navbar-brand" href="index.php">
-            <img src="assets/images/Tech_journey_logo.png"
-                 alt="Tech Journey Logo"
-                 width="120">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="navbar-container">
+
+        <!-- Logo -->
+        <a href="index.php" class="logo">
+            <img src="images/logo without background.png" alt="Tech Journey">
         </a>
 
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
+        <!-- Hamburger Button (Bootstrap collapse toggler) -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navLinks"
+            aria-controls="navLinks"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
             <span class="navbar-toggler-icon"></span>
-
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Navigation Links (Bootstrap collapse target) -->
+        <ul class="nav-links collapse" id="navLinks">
 
-            <ul class="navbar-nav ms-auto">
+            <li>
+                <a href="index.php"
+                class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">
+                    Home
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">
-                        Home
-                    </a>
-                </li>
+            <li>
+                <a href="Track.php" target="_blank"
+                class="<?= $currentPage == 'Track.php' ? 'active' : '' ?>">
+                    Tracks
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="events.php">
-                        Events
-                    </a>
-                </li>
+            <li>
+                <a href="events.php" target="_blank"
+                class="<?= $currentPage == 'events.php' ? 'active' : '' ?>">
+                    Events
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="resources.php">
-                        Resources
-                    </a>
-                </li>
+            <li>
+                <a href="resources.php" target="_blank"
+                class="<?= $currentPage == 'resources.php' ? 'active' : '' ?>">
+                    Resources
+                </a>
+            </li>
+            <li>
+                <a href="index.php#about">
+                    About
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="track.php">
-                        Track
-                    </a>
-                </li>
+            <!-- Login: stays inside the menu, pushed right on desktop via CSS -->
+            <li id="navLoginItem">
+                <a href="login.php" class="login-btn" target="_blank">Login</a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.php">
-                        Contact
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">
-                        Login
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
+        </ul>
 
     </div>
-
 </nav>
