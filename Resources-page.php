@@ -1,28 +1,21 @@
 <?php
 
 $pageTitle = "Resources";
-
 include_once("includes/navbar.php");
 
 $categories = [
-
     'all' => 'All',
-
     'frontend' => 'Frontend',
-
     'backend' => 'Backend',
-
     'cybersecurity' => 'Cybersecurity',
-
     'ai-ml' => 'AI',
-
-    'data-science' => 'Data Science',
-
+    'data-science' => 'Data Science'
 ];
 
 $resources = [
-
-    'all' => [ 'group' => null,'items' => [
+    'all' => [
+        'group' => null,
+        'items' => [
             [
                 'icon' => 'bi-mortarboard-fill',
                 'bg' => '#7C6CF0',
@@ -31,7 +24,6 @@ $resources = [
                 'link' => 'https://www.freecodecamp.org/news/tag/computer-science/',
                 'badge' => 'All'
             ],
-
             [
                 'icon' => 'bi-terminal-fill',
                 'bg' => '#111827',
@@ -40,7 +32,6 @@ $resources = [
                 'link' => 'https://cs50.harvard.edu/x/',
                 'badge' => 'All'
             ],
-
             [
                 'icon' => 'bi-youtube',
                 'bg' => '#FF0000',
@@ -49,7 +40,6 @@ $resources = [
                 'link' => 'https://www.youtube.com',
                 'badge' => 'All'
             ],
-
             [
                 'icon' => 'bi-book-half',
                 'bg' => '#0E9F8E',
@@ -58,7 +48,6 @@ $resources = [
                 'link' => 'https://developer.mozilla.org',
                 'badge' => 'Frontend'
             ],
-
             [
                 'icon' => 'bi-code-slash',
                 'bg' => '#000000',
@@ -67,7 +56,6 @@ $resources = [
                 'link' => 'https://www.freecodecamp.org',
                 'badge' => 'All'
             ],
-
             [
                 'icon' => 'bi-journal-code',
                 'bg' => '#111827',
@@ -76,7 +64,6 @@ $resources = [
                 'link' => 'https://devdocs.io',
                 'badge' => 'All'
             ],
-
             [
                 'icon' => 'bi-braces-asterisk',
                 'bg' => '#F7931E',
@@ -85,7 +72,6 @@ $resources = [
                 'link' => 'https://leetcode.com',
                 'badge' => 'All'
             ],
-
             [
                 'icon' => 'bi-github',
                 'bg' => '#000000',
@@ -93,13 +79,12 @@ $resources = [
                 'desc' => 'Explore projects and open source',
                 'link' => 'https://github.com',
                 'badge' => 'All'
-            ],
-
-        ],
-
+            ]
+        ]
     ],
-
-    'frontend' => ['roadmap' => [ 'HTML' => [
+    'frontend' => [
+        'roadmap' => [
+            'HTML' => [
                 [
                     'icon' => 'bi-filetype-html',
                     'bg' => '#E44D26',
@@ -108,7 +93,6 @@ $resources = [
                     'link' => 'https://www.youtube.com/playlist?list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji',
                     'badge' => 'Frontend'
                 ],
-
                 [
                     'icon' => 'bi-book-half',
                     'bg' => '#0E9F8E',
@@ -116,8 +100,7 @@ $resources = [
                     'desc' => 'Official HTML reference and guides',
                     'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTML',
                     'badge' => 'Frontend'
-                ],
-
+                ]
             ],
             'CSS' => [
                 [
@@ -128,7 +111,6 @@ $resources = [
                     'link' => 'https://www.youtube.com/playlist?list=PLDoPjvoNmBAzjsz06gkzlSrlev53MGIKe',
                     'badge' => 'Frontend'
                 ],
-
                 [
                     'icon' => 'bi-grid-3x3-gap-fill',
                     'bg' => '#7C6CF0',
@@ -136,10 +118,8 @@ $resources = [
                     'desc' => 'CSS-Tricks – complete guides to Flexbox and Grid',
                     'link' => 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
                     'badge' => 'Frontend'
-                ],
-
+                ]
             ],
-
             'JavaScript' => [
                 [
                     'icon' => 'bi-filetype-js',
@@ -156,12 +136,9 @@ $resources = [
                     'desc' => 'Official JavaScript reference and guides',
                     'link' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
                     'badge' => 'Frontend'
-                ],
-
+                ]
             ],
-
             'Frameworks & Tools' => [
-
                 [
                     'icon' => 'bi-github',
                     'bg' => '#000000',
@@ -170,7 +147,6 @@ $resources = [
                     'link' => 'https://www.youtube.com/playlist?list=PLDoPjvoNmBAw4eOj58MZPakHjaO3frVMF',
                     'badge' => 'Frontend'
                 ],
-
                 [
                     'icon' => 'bi-bootstrap-fill',
                     'bg' => '#7C6CF0',
@@ -178,13 +154,9 @@ $resources = [
                     'desc' => 'Learn to build responsive UIs fast with Bootstrap',
                     'link' => 'https://youtu.be/-qfEOE4vtxE',
                     'badge' => 'Frontend'
-                ],
-
+                ]
             ],
-
-
             'JavaScript Frameworks' => [
-
                 [
                     'icon' => 'bi-app-indicator',
                     'bg' => '#61DAFB',
@@ -193,7 +165,6 @@ $resources = [
                     'link' => 'https://www.youtube.com/playlist?list=PLYyqC4bNbCIdSZ-JayMLl4WO2Cr995vyS',
                     'badge' => 'Frontend'
                 ],
-
                 [
                     'icon' => 'bi-triangle-fill',
                     'bg' => '#42B883',
@@ -201,13 +172,9 @@ $resources = [
                     'desc' => 'Learn Vue.js from scratch',
                     'link' => 'https://www.youtube.com/@ElzeroWebSchool',
                     'badge' => 'Frontend'
-                ],
-
+                ]
             ],
-
-
             'APIs' => [
-
                 [
                     'icon' => 'bi-api',
                     'bg' => '#61DAFB',
@@ -215,12 +182,13 @@ $resources = [
                     'desc' => 'Learn how frontend applications communicate with APIs',
                     'link' => 'https://www.freecodecamp.org/news/tag/api/',
                     'badge' => 'Frontend'
-                ],
-            ],
-        ],
+                ]
+            ]
+        ]
     ],
-
-    'backend' => ['roadmap' => ['Programming Fundamentals' => [
+    'backend' => [
+        'roadmap' => [
+            'Programming Fundamentals' => [
                 [
                     'icon' => 'bi-terminal-fill',
                     'bg' => '#111827',
@@ -228,12 +196,9 @@ $resources = [
                     'desc' => 'Harvard CS50 – strong foundation before backend',
                     'link' => 'https://cs50.harvard.edu/x/',
                     'badge' => 'Backend'
-                ],
-
+                ]
             ],
-
             'Node.js' => [
-
                 [
                     'icon' => 'bi-node-plus-fill',
                     'bg' => '#3C873A',
@@ -242,7 +207,6 @@ $resources = [
                     'link' => 'https://www.youtube.com/results?search_query=nodejs+full+course',
                     'badge' => 'Backend'
                 ],
-
                 [
                     'icon' => 'bi-book-half',
                     'bg' => '#0E9F8E',
@@ -250,13 +214,9 @@ $resources = [
                     'desc' => 'Official Node.js documentation',
                     'link' => 'https://nodejs.org/en/docs/',
                     'badge' => 'Backend'
-                ],
-
+                ]
             ],
-
-
             'Express.js' => [
-
                 [
                     'icon' => 'bi-diagram-3-fill',
                     'bg' => '#111827',
@@ -265,7 +225,6 @@ $resources = [
                     'link' => 'https://www.youtube.com/results?search_query=express+js+crash+course',
                     'badge' => 'Backend'
                 ],
-
                 [
                     'icon' => 'bi-book-half',
                     'bg' => '#0E9F8E',
@@ -273,13 +232,9 @@ $resources = [
                     'desc' => 'Official Express.js documentation',
                     'link' => 'https://expressjs.com/',
                     'badge' => 'Backend'
-                ],
-
+                ]
             ],
-
-
             'Databases' => [
-
                 [
                     'icon' => 'bi-database-fill',
                     'bg' => '#00758F',
@@ -288,7 +243,6 @@ $resources = [
                     'link' => 'https://www.youtube.com/results?search_query=mysql+full+course',
                     'badge' => 'Backend'
                 ],
-
                 [
                     'icon' => 'bi-database',
                     'bg' => '#4479A1',
@@ -296,13 +250,9 @@ $resources = [
                     'desc' => 'Learn NoSQL databases with MongoDB',
                     'link' => 'https://www.youtube.com/results?search_query=mongodb+crash+course',
                     'badge' => 'Backend'
-                ],
-
+                ]
             ],
-
-
             'APIs' => [
-
                 [
                     'icon' => 'bi-diagram-3-fill',
                     'bg' => '#7C6CF0',
@@ -311,7 +261,6 @@ $resources = [
                     'link' => 'https://www.freecodecamp.org/news/tag/api/',
                     'badge' => 'Backend'
                 ],
-
                 [
                     'icon' => 'bi-shield-check',
                     'bg' => '#DC2626',
@@ -319,12 +268,13 @@ $resources = [
                     'desc' => 'Learn JWT and session-based authentication',
                     'link' => 'https://www.youtube.com/results?search_query=jwt+authentication+nodejs',
                     'badge' => 'Backend'
-                ],
-            ],
-        ],
+                ]
+            ]
+        ]
     ],
-
-    'cybersecurity' => ['roadmap' => ['Computer Fundamentals' => [
+    'cybersecurity' => [
+        'roadmap' => [
+            'Computer Fundamentals' => [
                 [
                     'icon' => 'bi-pc-display',
                     'bg' => '#111827',
@@ -332,11 +282,9 @@ $resources = [
                     'desc' => 'Computer and operating system fundamentals',
                     'link' => 'https://www.youtube.com/results?search_query=how+computers+and+operating+systems+work',
                     'badge' => 'Cybersecurity'
-                ],
-
+                ]
             ],
             'Networking' => [
-
                 [
                     'icon' => 'bi-router-fill',
                     'bg' => '#111827',
@@ -344,10 +292,9 @@ $resources = [
                     'desc' => 'Learn networking fundamentals',
                     'link' => 'https://www.youtube.com/results?search_query=networking+fundamentals+freecodecamp',
                     'badge' => 'Cybersecurity'
-                ],
+                ]
             ],
             'Linux' => [
-
                 [
                     'icon' => 'bi-terminal-fill',
                     'bg' => '#F7931E',
@@ -355,11 +302,9 @@ $resources = [
                     'desc' => 'Learn Linux commands and system administration',
                     'link' => 'https://www.youtube.com/results?search_query=linux+full+course+for+beginners',
                     'badge' => 'Cybersecurity'
-                ],
-
+                ]
             ],
             'Security Fundamentals' => [
-
                 [
                     'icon' => 'bi-shield-fill-check',
                     'bg' => '#7C6CF0',
@@ -367,13 +312,9 @@ $resources = [
                     'desc' => 'Understand the basic concepts of cybersecurity',
                     'link' => 'https://www.youtube.com/results?search_query=cybersecurity+fundamentals+course',
                     'badge' => 'Cybersecurity'
-                ],
-
+                ]
             ],
-
-
             'Cryptography' => [
-
                 [
                     'icon' => 'bi-key-fill',
                     'bg' => '#0E9F8E',
@@ -381,11 +322,9 @@ $resources = [
                     'desc' => 'Learn encryption and secure communication basics',
                     'link' => 'https://www.youtube.com/results?search_query=cryptography+crash+course',
                     'badge' => 'Cybersecurity'
-                ],
-
+                ]
             ],
             'Web Security' => [
-
                 [
                     'icon' => 'bi-globe2',
                     'bg' => '#00758F',
@@ -393,11 +332,9 @@ $resources = [
                     'desc' => 'Learn the most common web vulnerabilities',
                     'link' => 'https://owasp.org/www-project-top-ten/',
                     'badge' => 'Cybersecurity'
-                ],
-
+                ]
             ],
             'Ethical Hacking' => [
-
                 [
                     'icon' => 'bi-shield-lock-fill',
                     'bg' => '#111827',
@@ -406,7 +343,6 @@ $resources = [
                     'link' => 'https://tryhackme.com',
                     'badge' => 'Cybersecurity'
                 ],
-
                 [
                     'icon' => 'bi-bug-fill',
                     'bg' => '#DC2626',
@@ -414,10 +350,9 @@ $resources = [
                     'desc' => 'Practice real-world penetration testing',
                     'link' => 'https://www.hackthebox.com',
                     'badge' => 'Cybersecurity'
-                ],
+                ]
             ],
             'Security Projects' => [
-
                 [
                     'icon' => 'bi-rocket-takeoff-fill',
                     'bg' => '#7C6CF0',
@@ -425,13 +360,13 @@ $resources = [
                     'desc' => 'Practice cybersecurity through real hands-on projects',
                     'link' => 'https://www.hackthebox.com',
                     'badge' => 'Cybersecurity'
-                ],
-            ],
-        ],
+                ]
+            ]
+        ]
     ],
-
-    'ai-ml' => ['roadmap' => [ 'Python' => [
-
+    'ai-ml' => [
+        'roadmap' => [
+            'Python' => [
                 [
                     'icon' => 'bi-filetype-py',
                     'bg' => '#3776AB',
@@ -439,10 +374,9 @@ $resources = [
                     'desc' => 'Python basics before Machine Learning',
                     'link' => 'https://www.youtube.com/results?search_query=python+for+ai+freecodecamp',
                     'badge' => 'AI'
-                ],
+                ]
             ],
             'Mathematics' => [
-
                 [
                     'icon' => 'bi-calculator-fill',
                     'bg' => '#7C6CF0',
@@ -450,11 +384,9 @@ $resources = [
                     'desc' => 'Linear algebra, calculus and probability foundations',
                     'link' => 'https://www.youtube.com/results?search_query=math+for+machine+learning+course',
                     'badge' => 'AI'
-                ],
-
+                ]
             ],
             'NumPy & Pandas' => [
-
                 [
                     'icon' => 'bi-table',
                     'bg' => '#111827',
@@ -462,11 +394,9 @@ $resources = [
                     'desc' => 'Work with data using Python libraries',
                     'link' => 'https://www.youtube.com/results?search_query=numpy+pandas+full+course',
                     'badge' => 'AI'
-                ],
-
+                ]
             ],
             'Statistics' => [
-
                 [
                     'icon' => 'bi-bar-chart-fill',
                     'bg' => '#0E9F8E',
@@ -474,11 +404,9 @@ $resources = [
                     'desc' => 'Understand statistics before diving into ML',
                     'link' => 'https://www.khanacademy.org/math/statistics-probability',
                     'badge' => 'AI'
-                ],
-
+                ]
             ],
             'Machine Learning' => [
-
                 [
                     'icon' => 'bi-cpu-fill',
                     'bg' => '#7C6CF0',
@@ -486,11 +414,9 @@ $resources = [
                     'desc' => 'Andrew Ng – Machine Learning Specialization',
                     'link' => 'https://www.coursera.org/specializations/machine-learning-introduction',
                     'badge' => 'AI'
-                ],
-
+                ]
             ],
             'Deep Learning' => [
-
                 [
                     'icon' => 'bi-diagram-2-fill',
                     'bg' => '#111827',
@@ -498,12 +424,9 @@ $resources = [
                     'desc' => 'DeepLearning.AI – neural networks in depth',
                     'link' => 'https://www.coursera.org/specializations/deep-learning',
                     'badge' => 'AI'
-                ],
-
+                ]
             ],
-
             'Generative AI' => [
-
                 [
                     'icon' => 'bi-stars',
                     'bg' => '#DC2626',
@@ -511,13 +434,9 @@ $resources = [
                     'desc' => 'Explore modern generative AI technologies',
                     'link' => 'https://www.youtube.com/results?search_query=generative+ai+course',
                     'badge' => 'AI'
-                ],
-
+                ]
             ],
-
-
             'AI Projects' => [
-
                 [
                     'icon' => 'bi-rocket-takeoff-fill',
                     'bg' => '#00758F',
@@ -525,12 +444,13 @@ $resources = [
                     'desc' => 'Build practical AI projects',
                     'link' => 'https://www.kaggle.com/competitions',
                     'badge' => 'AI'
-                ],
-            ],
-        ],
+                ]
+            ]
+        ]
     ],
-
-    'data-science' => [ 'roadmap' => [ 'Python' => [
+    'data-science' => [
+        'roadmap' => [
+            'Python' => [
                 [
                     'icon' => 'bi-filetype-py',
                     'bg' => '#3776AB',
@@ -538,7 +458,7 @@ $resources = [
                     'desc' => 'Python basics for data science',
                     'link' => 'https://www.youtube.com/results?search_query=python+for+data+science+freecodecamp',
                     'badge' => 'Data Science'
-                ],
+                ]
             ],
             'Statistics' => [
                 [
@@ -548,10 +468,9 @@ $resources = [
                     'desc' => 'Statistics for data science',
                     'link' => 'https://www.khanacademy.org/math/statistics-probability',
                     'badge' => 'Data Science'
-                ],
+                ]
             ],
             'NumPy' => [
-
                 [
                     'icon' => 'bi-grid-3x3-gap-fill',
                     'bg' => '#111827',
@@ -559,10 +478,9 @@ $resources = [
                     'desc' => 'Perform numerical computations with Python',
                     'link' => 'https://www.youtube.com/results?search_query=numpy+crash+course',
                     'badge' => 'Data Science'
-                ],
+                ]
             ],
             'Pandas' => [
-
                 [
                     'icon' => 'bi-table',
                     'bg' => '#0E9F8E',
@@ -570,13 +488,9 @@ $resources = [
                     'desc' => 'Analyze and manipulate datasets with Pandas',
                     'link' => 'https://www.youtube.com/results?search_query=pandas+full+course',
                     'badge' => 'Data Science'
-                ],
-
+                ]
             ],
-
-
             'Data Cleaning' => [
-
                 [
                     'icon' => 'bi-eraser-fill',
                     'bg' => '#DC2626',
@@ -584,13 +498,9 @@ $resources = [
                     'desc' => 'Prepare and clean real-world datasets',
                     'link' => 'https://www.youtube.com/results?search_query=data+cleaning+with+pandas',
                     'badge' => 'Data Science'
-                ],
-
+                ]
             ],
-
-
             'Data Visualization' => [
-
                 [
                     'icon' => 'bi-graph-up',
                     'bg' => '#0E9F8E',
@@ -598,13 +508,9 @@ $resources = [
                     'desc' => 'Learn to visualize and communicate insights',
                     'link' => 'https://www.kaggle.com/learn/data-visualization',
                     'badge' => 'Data Science'
-                ],
-
+                ]
             ],
-
-
             'SQL' => [
-
                 [
                     'icon' => 'bi-database-fill',
                     'bg' => '#00758F',
@@ -612,13 +518,9 @@ $resources = [
                     'desc' => 'Query and manage relational databases',
                     'link' => 'https://www.youtube.com/results?search_query=sql+full+course',
                     'badge' => 'Data Science'
-                ],
-
+                ]
             ],
-
-
             'Machine Learning' => [
-
                 [
                     'icon' => 'bi-cpu-fill',
                     'bg' => '#7C6CF0',
@@ -626,234 +528,98 @@ $resources = [
                     'desc' => 'Apply machine learning to real data',
                     'link' => 'https://www.coursera.org/specializations/machine-learning-introduction',
                     'badge' => 'Data Science'
-                ],
-
-            ],
-
-        ],
-
-    ],
-
+                ]
+            ]
+        ]
+    ]
 ];
 
-$initialTrack = isset($_GET['track'])
-    && array_key_exists($_GET['track'], $categories)
+$initialTrack = isset($_GET['track']) && array_key_exists($_GET['track'], $categories)
     ? $_GET['track']
     : 'all';
-
 ?>
 
-
-
-<!-- =====================================================
-     PAGE
-===================================================== -->
-
 <div class="container mt-4">
+    <h2 class="pf-page-title">Resources</h2>
+    <p class="pf-page-subtitle">Curated resources to help you learn better</p>
 
-    <!-- Page Title -->
-
-    <h2 class="pf-page-title">
-        Resources
-    </h2>
-
-    <p class="pf-page-subtitle">
-        Curated resources to help you learn better
-    </p>
-
-
-    <!-- =================================================
-         FILTER BUTTONS
-    ================================================== -->
-
-    <div
-        class="d-flex flex-wrap gap-2 my-4"
-        id="pf-filters"
-    >
-
+    <div class="d-flex flex-wrap gap-2 my-4" id="pf-filters">
         <?php foreach ($categories as $slug => $label): ?>
-
             <button
                 type="button"
                 class="pf-filter-btn <?= $slug === $initialTrack ? 'active' : '' ?>"
                 data-filter="<?= htmlspecialchars($slug) ?>"
             >
-
                 <?= htmlspecialchars($label) ?>
-
             </button>
-
         <?php endforeach; ?>
-
     </div>
 
-
-    <!-- =================================================
-         RESOURCE CONTAINER
-    ================================================== -->
-
-    <div
-        id="pf-resource-container"
-        class="pb-5"
-    >
-
-
-        <!-- =================================================
-             ALL RESOURCES
-        ================================================== -->
-
+    <div id="pf-resource-container" class="pb-5">
         <div
             class="pf-track-section"
             data-section="all"
             style="<?= $initialTrack === 'all' ? '' : 'display:none;' ?>"
         >
-
             <?php foreach ($resources['all']['items'] as $item): ?>
-
                 <?php include __DIR__ . '/resource_row.php'; ?>
-
             <?php endforeach; ?>
-
         </div>
 
-
-
-        <!-- =================================================
-             OTHER TRACKS
-        ================================================== -->
-
         <?php foreach ($resources as $slug => $data): ?>
-
-            <?php
-
-            if ($slug === 'all') {
-                continue;
-            }
-
-            ?>
+            <?php if ($slug === 'all') continue; ?>
 
             <div
                 class="pf-track-section"
                 data-section="<?= htmlspecialchars($slug) ?>"
                 style="<?= $initialTrack === $slug ? '' : 'display:none;' ?>"
             >
-
-
                 <?php foreach ($data['roadmap'] as $groupName => $items): ?>
-
-                    <!-- Group Title -->
-
                     <div class="pf-group-title">
-
                         <i class="bi bi-map-fill"></i>
-
                         <?= htmlspecialchars($groupName) ?>
-
                     </div>
 
-
-                    <!-- Resources -->
-
                     <?php foreach ($items as $item): ?>
-
                         <?php include __DIR__ . '/resource_row.php'; ?>
-
                     <?php endforeach; ?>
-
-
                 <?php endforeach; ?>
-
-
             </div>
-
         <?php endforeach; ?>
-
-
     </div>
-
 </div>
 
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
+document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll(".pf-filter-btn");
-
     const sections = document.querySelectorAll(".pf-track-section");
 
-
-    buttons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
             const filter = this.getAttribute("data-filter");
 
-
-            // Remove active from all buttons
-
-            buttons.forEach(function (btn) {
-
+            buttons.forEach(function(btn) {
                 btn.classList.remove("active");
-
             });
-
-
-            // Add active to clicked button
 
             this.classList.add("active");
 
-
-            // Show correct section
-
-            sections.forEach(function (section) {
-
-                if (section.getAttribute("data-section") === filter) {
-
-                    section.style.display = "";
-
-                } else {
-
-                    section.style.display = "none";
-
-                }
-
+            sections.forEach(function(section) {
+                section.style.display = section.getAttribute("data-section") === filter ? "" : "none";
             });
-
-
-            // Update URL without reloading page
 
             const url = new URL(window.location.href);
 
             if (filter === "all") {
-
                 url.searchParams.delete("track");
-
             } else {
-
                 url.searchParams.set("track", filter);
-
             }
 
             window.history.replaceState({}, "", url);
-
         });
-
     });
-
 });
-
 </script>
 
-
-
-<?php
-
-include_once 'includes/footer.php';
-
-?>
+<?php include_once 'includes/footer.php'; ?>
