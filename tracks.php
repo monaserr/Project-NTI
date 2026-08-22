@@ -132,8 +132,12 @@ $totalTracksCount=count($tracks);
                             <div class="track-content">
                                 <h3><?=escape($track["title"])?></h3>
                                 <p class="desc"><?=escape($track["description"])?></p>
-
-                                <button class="explore-link" type="button" data-bs-toggle="collapse" data-bs-target="#<?=escape($roadmapId)?>" aria-expanded="false" aria-controls="<?=escape($roadmapId)?>">
+                                <div class="trackcard-buttons d-flex align-items-center gap-3 mt-3">
+                                    <a href="" class="enroll-track">Enroll</a>
+                                    <a href="Resources-page.php?track=<?= urlencode($trackSlug) ?>#top" class="track-explore-link">Explore
+                                    <span>→</span></a>
+                                </div>
+                                <button class="roadmap" onclick="toggleRoadmap(this)" type="button" data-bs-toggle="collapse" data-bs-target="#<?=escape($roadmapId)?>" aria-expanded="false" aria-controls="<?=escape($roadmapId)?>">
                                     <span>🗺️ View Roadmap</span>
                                     <span class="roadmap-arrow">↓</span>
                                 </button>

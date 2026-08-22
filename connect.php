@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect("localhost","root","","tech_journey");
+$conn=mysqli_connect("localhost","root","ةهىش2006","tech_journey");
 if(!$conn){
     die("Database connection failed: ".mysqli_connect_error());
 }

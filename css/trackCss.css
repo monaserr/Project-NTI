@@ -203,28 +203,72 @@ p {
   min-height: 44px;
 }
 
-.explore-link {
-  width: 100%;
+.track-explore-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border-radius: 10px;
+  margin-left: auto;
+  background: var(--color-bg-light);
+  text-decoration: none;
+  font-weight: 400;
+  transition: 0.3s ease;
+  color: var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
+  cursor: pointer;
+}
+
+.track-explore-link:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.25);
+}
+
+/* Arrow */
+.track-explore-link span {
+  margin-left: 20px;
+  transition: transform 0.2s ease;
+}
+.track-explore-link:hover span {
+  transform: translateX(3px);
+}
+
+
+.roadmap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 11px 14px;
-  border-radius: 11px;
-  background: var(--purple-light);
-  color: var(--primary-dark);
+  justify-content: center;
+  width: 100%;
+  padding: 8px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 800;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-.explore-link:hover {
-  background: #e4dcff;
-  color: var(--primary-dark);
+.roadmap:hover {
+  background: #f3e8ff;
+  color: #6d28d9;
+  border-color: #8b5cf6;
 }
 
+.roadmap.active {
+  background: #f3e8ff !important;
+  color: #6d28d9 !important;
+  border-color: #8b5cf6 !important;
+}
+
+.roadmap.active {
+  background: var(--color-primary-light);
+  color: white;
+  border-color: var(--color-primary-light);
+}
 .roadmap-wrapper {
   background: #fbfaff;
   border-top: 1px solid var(--border);

@@ -154,7 +154,7 @@ $trackSlugs = [
                         <h3>Web Development Workshop</h3>
                         <p class="home-event-date">August 20, 2026</p>
                         <p class="home-event-price">EGP 150</p>
-                        <a class="explore-link" data-bs-toggle="modal" data-bs-target="#eventModal1">Explore
+                        <a class="event-explore-link" data-bs-toggle="modal" data-bs-target="#eventModal1">Explore
                             <span>→</span></a>
                     </div>
                 </div>
@@ -170,7 +170,7 @@ $trackSlugs = [
                         <h3>AI Beginners Session</h3>
                         <p class="home-event-date">August 25, 2026</p>
                         <p class="home-event-price">EGP 100</p>
-                        <a class="explore-link" data-bs-toggle="modal" data-bs-target="#eventModal2">Explore
+                        <a class="event-explore-link" data-bs-toggle="modal" data-bs-target="#eventModal2">Explore
                             <span>→</span></a>
                     </div>
                 </div>
@@ -186,7 +186,7 @@ $trackSlugs = [
                         <h3>Coding Challenge</h3>
                         <p class="home-event-date">September 2, 2026</p>
                         <p class="home-event-price">EGP 50</p>
-                        <a class="explore-link" data-bs-toggle="modal" data-bs-target="#eventModal3">Explore
+                        <a class="event-explore-link" data-bs-toggle="modal" data-bs-target="#eventModal3">Explore
                             <span>→</span></a>
                     </div>
                 </div>

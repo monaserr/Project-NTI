@@ -8,8 +8,8 @@ $categories = [
     "all" => "All",
     "frontend" => "Frontend",
     "backend" => "Backend",
-    "cybersecurity" => "Cybersecurity",
     "ai-ml" => "AI",
+    "cybersecurity" => "Cybersecurity",
     "data-science" => "Data Science"
 ];
 
@@ -71,7 +71,7 @@ if ($result) {
     }
 }
 ?>
-
+<div id="top"></div>
 <div class="container mt-4">
     <h2 class="pf-page-title">Resources</h2>
     <p class="pf-page-subtitle">Curated resources to help you learn better</p>

@@ -179,7 +179,7 @@ section {
   font-weight: 500;
 
   padding: 5px 10px;
-  border-radius: 12px;
+  border-radius: 90px;
 
   transition: all 0.25s ease;
 }
@@ -574,23 +574,20 @@ section {
 /* EXPLORE LINK */
 .explore-link {
   position: relative;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 11px 24px;
+  width: 250px;
+  padding: 10px 25px;
   border-radius: 10px;
-  margin-left: 40px;
-
+  margin-left: auto;
   background: var(--color-bg-light);
-
   text-decoration: none;
   font-weight: 400;
-
   transition: 0.3s ease;
   color: var(--color-primary-light);
   border: 1px solid var(--color-primary-light);
+  cursor: pointer;
 }
 
 .explore-link:hover {
@@ -605,11 +602,13 @@ section {
 
 /* Arrow */
 .explore-link span {
+  margin-left: 20px;
   transition: transform 0.2s ease;
 }
 .explore-link:hover span {
   transform: translateX(3px);
 }
+/*enroll button*/
 .enroll-track{
   display: inline-flex;
   align-items: center;
@@ -742,25 +741,30 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 11px 24px;
   border-radius: 10px;
-
   background: var(--color-bg-light);
   color: var(--color-primary-light);
-
   text-decoration: none;
   font-weight: 400;
-
   border: 1px solid var(--color-primary-light);
-
   transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .event-explore-link:hover {
-  color: var(--color-primary-light);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.15);
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.25);
+}
+
+/* Arrow */
+.event-explore-link span {
+  margin-left: 20px;
+  transition: transform 0.2s ease;
+}
+.event-explore-link:hover span {
+  transform: translateX(3px);
 }
 
 /* Explore More Button */
