@@ -247,7 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p class="subtitle">Create an account to unlock amazing resources</p>
 
             <?php if (!empty($errors)): ?>
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <strong>Please fix the following:</strong>
                     <ul>
                         <?php foreach ($errors as $err): ?>

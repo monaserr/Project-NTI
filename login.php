@@ -1,18 +1,103 @@
 <?php
-if (isset($_POST['login'])) {
-    header("Location: index.php");
-    exit;
+
+session_start();
+
+require_once "connect.php";
+
+$error = "";
+
+$email = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $email = trim($_POST["email"] ?? "");
+    $password = $_POST["password"] ?? "";
+
+    // Validate email
+    if ($email === "") {
+        $error = "Please enter your email.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Please enter a valid email address.";
+    }
+
+    // Validate password
+    elseif ($password === "") {
+        $error = "Please enter your password.";
+    }
+
+    // Check database
+    if ($error === "") {
+
+        $sql = "SELECT id, first_name, last_name, email, password, image, role
+                FROM users
+                WHERE email = ?
+                LIMIT 1";
+
+        $stmt = mysqli_prepare($conn, $sql);
+
+        if ($stmt) {
+
+            mysqli_stmt_bind_param($stmt, "s", $email);
+
+            mysqli_stmt_execute($stmt);
+
+            $result = mysqli_stmt_get_result($stmt);
+
+            if ($user = mysqli_fetch_assoc($result)) {
+
+                // Check password
+                if (password_verify($password, $user["password"])) {
+
+                    // Store user information in session
+                    $_SESSION["user_id"] = $user["id"];
+                    $_SESSION["user_name"] = $user["first_name"] . " " . $user["last_name"];
+                    $_SESSION["user_email"] = $user["email"];
+                    $_SESSION["user_image"] = $user["image"];
+                    $_SESSION["role"] = $user["role"];
+
+                    // Login successful
+                    header("Location: index.php");
+                    exit;
+
+                } else {
+
+                    $error = "Incorrect email or password.";
+
+                }
+
+            } else {
+
+                $error = "Incorrect email or password.";
+
+            }
+
+            mysqli_stmt_close($stmt);
+
+        } else {
+
+            $error = "Database error. Please try again.";
+
+        }
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login - Tech Journey</title>
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <style>
+
         .login-page {
             background-color: #F8FAFC;
             color: #0F172A;
@@ -87,16 +172,6 @@ if (isset($_POST['login'])) {
             font-size: 14px;
         }
 
-        .login-page .forgot-password {
-            color: #7C3AED;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .login-page .forgot-password:hover {
-            color: #1E3A8A;
-        }
-
         .login-page .login-btn {
             width: 100%;
             height: 48px;
@@ -130,7 +205,18 @@ if (isset($_POST['login'])) {
             color: #1E3A8A;
         }
 
+        .login-page .login-error {
+            background-color: #FEF2F2;
+            border: 1px solid #FECACA;
+            color: #B91C1C;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
         @media (max-width: 768px) {
+
             .login-page {
                 padding: 25px 15px 40px;
             }
@@ -156,57 +242,150 @@ if (isset($_POST['login'])) {
             .login-page .login-form h1 {
                 font-size: 27px;
             }
+
         }
+
     </style>
+
 </head>
+
 <body>
-    <?php include 'includes/navbar.php'; ?>
 
-    <main class="login-page">
-        <div class="login-card">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="login-image">
-                        <img src="images\login-boy.png" alt="Tech Journey Login">
-                    </div>
+<?php include 'includes/navbar.php'; ?>
+
+
+<main class="login-page">
+
+    <div class="login-card">
+
+        <div class="row g-0">
+
+            <div class="col-md-6">
+
+                <div class="login-image">
+
+                    <img src="images\login-boy.png" alt="Tech Journey Login">
+
                 </div>
 
-                <div class="col-md-6">
-                    <div class="login-form">
-                        <h1>Welcome Back 👋</h1>
-                        <p class="login-subtitle">Login to your account</p>
-
-                        <form method="POST">
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter your email">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Enter your password">
-                            </div>
-
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="remember">
-                                    <label class="form-check-label remember" for="remember">Remember me</label>
-                                </div>
-                            </div>
-
-                            <button type="submit" name="login" class="login-btn">Login</button>
-
-                            <p class="signup-text">
-                                Don't have an account?
-                                <a href="register.php">Sign Up</a>
-                            </p>
-                        </form>
-                    </div>
-                </div>
             </div>
-        </div>
-    </main>
 
-    <?php include 'includes/footer.php'; ?>
+
+            <div class="col-md-6">
+
+                <div class="login-form">
+
+                    <h1>Welcome Back 👋</h1>
+
+                    <p class="login-subtitle">
+                        Login to your account
+                    </p>
+
+
+                    <?php if ($error !== ""): ?>
+
+                        <div class="login-error">
+
+                            <?= htmlspecialchars($error) ?>
+
+                        </div>
+
+                    <?php endif; ?>
+
+
+                    <form method="POST">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                value="<?= htmlspecialchars($email) ?>"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+
+                            <div class="form-check">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="remember"
+                                >
+
+                                <label
+                                    class="form-check-label remember"
+                                    for="remember"
+                                >
+                                    Remember me
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            name="login"
+                            class="login-btn"
+                        >
+                            Login
+                        </button>
+
+
+                        <p class="signup-text">
+
+                            Don't have an account?
+
+                            <a href="register.php">
+                                Sign Up
+                            </a>
+
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<?php include 'includes/footer.php'; ?>
+
 </body>
+
 </html>

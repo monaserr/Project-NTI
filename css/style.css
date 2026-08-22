@@ -456,7 +456,7 @@ section {
 /* Tracks Section */
 
 .tracks-section {
-  background: var(--color-bg-light);
+  background-color: var(--color-bg-light);
 }
 
 .tracks-title,
@@ -486,7 +486,7 @@ section {
 .track-card {
   height: 100%;
   background: var(--color-bg-white);
-  border: 1px solid var(--color-border);
+ border: 1px solid var(--color-border);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -565,24 +565,38 @@ section {
   font-size: 12px;
   font-weight: 600;
 }
-
+.trackcard-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
 /* EXPLORE LINK */
 .explore-link {
-  width: fit-content;
+  position: relative;
+
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  margin-top: auto;
-  color: var(--color-primary);
+  justify-content: center;
+
+  padding: 11px 24px;
+  border-radius: 10px;
+  margin-left: 40px;
+
+  background: var(--color-bg-light);
+
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: 0.2s ease;
+  font-weight: 400;
+
+  transition: 0.3s ease;
+  color: var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
 }
 
 .explore-link:hover {
-  color: var(--color-primary-light);
-  gap: 8px;
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.25);
 }
 
 .explore-link {
@@ -596,6 +610,21 @@ section {
 .explore-link:hover span {
   transform: translateX(3px);
 }
+.enroll-track{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: white;
+  background: var(--gradient-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+
 
 /* Explore More Button */
 
@@ -613,7 +642,7 @@ section {
   font-weight: 600;
   transition: 0.3s ease;
 }
-
+.enroll-track:hover,
 .explore-btn:hover,
 .hero-btn:hover {
   color: white;
@@ -707,6 +736,31 @@ section {
   font-size: 14px;
   font-weight: 600;
   margin-top: 20px;
+}
+
+.event-explore-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 24px;
+  border-radius: 10px;
+
+  background: var(--color-bg-light);
+  color: var(--color-primary-light);
+
+  text-decoration: none;
+  font-weight: 400;
+
+  border: 1px solid var(--color-primary-light);
+
+  transition: 0.3s ease;
+}
+
+.event-explore-link:hover {
+  color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.15);
 }
 
 /* Explore More Button */
