@@ -54,6 +54,7 @@ CREATE TABLE resources (
     id INT AUTO_INCREMENT PRIMARY KEY,
     course_id INT DEFAULT NULL,
     category VARCHAR(100) NOT NULL,
+    topic VARCHAR(100) DEFAULT NULL,
     title VARCHAR(150) NOT NULL,
     description TEXT,
     icon VARCHAR(100),
