@@ -16,8 +16,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <link rel="stylesheet" href="css/trackCss.css?v=<?= filemtime('css/trackCss.css') ?>">
     <?php endif; ?>
 
+    <?php if ($currentPage == 'add_events.php'): ?>
+        <link rel="stylesheet" href="../css/event_istructor_style.css?v <?= filemtime('../css/event_istructor_style.css') ?>">
+    <?php endif; ?>
+
     <?php if ($currentPage == 'events.php'): ?>
-        <link rel="stylesheet" href="css/eventstyle.css?v=<?= filemtime('css/eventstyle.css') ?>">
+        <link rel="stylesheet" href="../css/event_istructor_style.css?v <?= filemtime('../css/event_istructor_style.css') ?>">
     <?php endif; ?>
 
     <?php if ($currentPage == 'Resources-page.php'): ?>
