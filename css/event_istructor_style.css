@@ -1,0 +1,633 @@
+
+.evt-page-wrapper {
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+
+.evt-page-wrapper .evt-title {
+    color: #111827;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
+}
+
+.evt-page-wrapper .text-purple {
+    color: #6f42c1 !important;
+}
+
+
+.evt-filter-btn {
+    padding: 9px 20px;
+    border-radius: 25px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.evt-filter-btn:hover {
+    background: #f3e8ff;
+    color: #7c3aed;
+    border-color: #d8b4fe;
+
+    transform: translateY(-1px);
+}
+
+.evt-filter-btn.active {
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    ) !important;
+
+    color: #ffffff !important;
+
+    border-color: transparent !important;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 15px rgba(124, 58, 237, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+.evt-card-item {
+    display: flex;
+    height: 100%;
+}
+
+.evt-card-item .form-card {
+    width: 100%;
+    height: 100% !important;
+
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border) !important;
+    border-radius: 20px !important;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s ease;
+}
+
+.evt-card-item .form-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-border-hover) !important;
+    box-shadow: 0 15px 40px var(--shadow-purple-light) !important;
+}
+
+.evt-card-item .card-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 30px 30px;
+}
+
+
+
+
+.evt-card-item .card-img-top {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 0 !important;
+
+    transition: transform 0.3s ease;
+}
+
+/* Image Hover */
+
+.evt-card-item .form-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+
+
+
+.evt-card-item .card-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 30px 30px;
+
+    background: var(--color-bg-white);
+}
+
+
+
+.evt-card-item .badge.bg-secondary {
+  margin-top: 15px;
+    background-color: #f3f0ff !important;
+
+    color: #6f42c1 !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 6px 14px;
+
+    border-radius: 20px !important;
+
+    display: inline-block;
+
+    line-height: 1.2;
+
+    border: none !important;
+}
+
+.evt-card-item .card-title {
+    margin-top: 10px;
+
+    margin-bottom: 12px;
+
+    color: var(--color-text-dark) !important;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+
+.evt-card-item .card-text {
+    min-height: 76px;
+
+    color: var(--color-text-gray) !important;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 14px;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+.evt-card-item .card-body > .mb-2 {
+    margin-bottom: 12px !important;
+}
+
+.evt-card-item .card-body > .mb-2 small {
+    color: var(--color-text-gray) !important;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.evt-card-item .card-body > .mb-2 strong {
+    color: var(--color-text-dark);
+}
+
+
+
+
+.evt-card-item .card-body > .text-purple {
+    color: var(--color-primary) !important;
+
+    font-size: 15px;
+
+    margin-bottom: 18px !important;
+}
+
+
+
+.evt-card-item .btn-purple {
+
+    background: var(--color-primary) !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    padding: 11px 18px;
+
+    font-size: 14px;
+
+    font-weight: 600 !important;
+
+    transition: 0.3s ease;
+
+    box-shadow: none;
+}
+
+.evt-card-item .btn-purple:hover {
+
+    background: var(--color-primary-alt) !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px var(--shadow-purple-light);
+}
+
+
+.btn-outline-danger {
+
+    border-radius: 11px !important;
+
+    font-weight: 600;
+}
+
+
+
+.evt-page-wrapper .form-label {
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+.evt-page-wrapper .form-control,
+.evt-page-wrapper .form-select {
+
+    border-radius: 11px !important;
+
+    border: 1px solid #e2e8f0 !important;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    padding: 11px 14px;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.evt-page-wrapper .form-control:focus,
+.evt-page-wrapper .form-select:focus {
+
+    border-color: #7c3aed !important;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(124, 58, 237, 0.12) !important;
+}
+
+
+.evt-page-wrapper .alert {
+
+    border-radius: 12px;
+
+    border: none;
+
+    padding: 13px 17px;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(15, 23, 42, 0.05);
+}
+
+
+
+#bookingModal .modal-content {
+
+    border: none;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px
+        rgba(15, 23, 42, 0.18);
+}
+
+#bookingModal .modal-header {
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    padding: 18px 22px;
+
+    border: none;
+}
+
+#bookingModal .modal-title {
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+#bookingModal .modal-body {
+
+    padding: 24px !important;
+
+    background: #ffffff;
+}
+
+#bookingModal #modalImage {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 13px !important;
+
+    margin-bottom: 15px;
+}
+
+#bookingModal .bg-light {
+
+    background: #f8f7ff !important;
+
+    border:
+        1px solid #ede9fe !important;
+
+    border-radius: 13px !important;
+}
+
+#bookingModal .text-purple {
+
+    color: #6f42c1 !important;
+}
+
+#bookingModal .btn-purple {
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    ) !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    border-radius: 11px !important;
+
+    padding: 11px;
+}
+
+#bookingModal .btn-purple:hover {
+
+    opacity: 0.95;
+}
+
+.evt-form-card {
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(111, 66, 193, 0.12);
+
+    padding: 28px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(15, 23, 42, 0.06);
+}
+
+.evt-form-title {
+
+    color: #111827;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.evt-form-card .form-label {
+
+    color: #374151;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+.evt-form-card .form-control,
+.evt-form-card .form-select {
+
+    border-radius: 11px !important;
+
+    border: 1px solid #e2e8f0 !important;
+
+    padding: 11px 14px;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.evt-form-card .form-control:focus,
+.evt-form-card .form-select:focus {
+
+    border-color: #7c3aed !important;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(124, 58, 237, 0.12) !important;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .evt-page-wrapper {
+
+        padding-top: 20px;
+
+        padding-bottom: 45px;
+    }
+
+    .evt-page-wrapper .evt-title {
+
+        font-size: 27px;
+    }
+
+    .evt-card-item .card-img-top {
+
+        height: 190px;
+    }
+
+    .evt-card-item .card-body {
+
+        padding: 18px;
+    }
+
+    .evt-filter-btn {
+
+        padding: 8px 15px;
+
+        font-size: 13px;
+    }
+
+    #bookingModal .modal-body {
+
+        padding: 18px !important;
+    }
+}
+
+.booked-text{color:#22c55e!important;font-weight:800;}
+
+.booked-event-button{background:#22c55e!important;border-color:#22c55e!important;color:#fff!important;cursor:not-allowed;box-shadow:none!important;}
+
+.btn-outline-purple {
+    color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+    background: transparent !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    padding: 7px 12px;
+    transition: 0.3s ease;
+}
+
+.btn-outline-purple:hover {
+    background: var(--color-primary) !important;
+    color: #ffffff !important;
+    border-color: var(--color-primary) !important;
+    transform: translateY(-1px);
+}
+
+.btn-event {
+    background: var(--color-primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 11px 18px;
+    font-size: 15px;
+    font-weight: 600 !important;
+    transition: 0.3s ease;
+}
+
+.btn-event:hover {
+    background: var(--color-primary-alt) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow-purple-light);
+}
+
+
+.evt-add-form-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 20px !important;
+    padding: 35px !important;
+}
+
+.evt-add-form-card h2 {
+    margin-bottom: 30px !important;
+}
+
+.evt-add-form-card .form-label {
+    display: block;
+    margin-bottom: 8px !important;
+}
+
+.evt-add-form-card .form-control {
+    margin-bottom: 5px;
+}
+
+
+/* Edit Event Form */
+.evt-edit-form-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 20px !important;
+    padding: 35px !important;
+}
+
+.evt-edit-form-card h2 {
+    margin-bottom: 30px !important;
+}
+
+.evt-edit-form-card .form-label {
+    display: block;
+    margin-bottom: 8px !important;
+}
+
+.evt-edit-form-card .form-control {
+    margin-bottom: 5px;
+}
+
+/* Edit Buttons */
+.evt-edit-form-card .btn-purple {
+    background: var(--color-primary) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--color-primary) !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: 0.3s ease;
+}
+
+.evt-edit-form-card .btn-purple:hover {
+    background: var(--color-primary-alt) !important;
+    border-color: var(--color-primary-alt) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow-purple-light);
+}
+
+.evt-edit-form-card .btn-outline-secondary {
+    background: transparent !important;
+    color: var(--color-text-gray) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: 0.3s ease;
+}
+
+.evt-edit-form-card .btn-outline-secondary:hover {
+    background: #f3f0ff !important;
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    transform: translateY(-2px);
+}
