@@ -78,11 +78,8 @@ if ($result) {
 
     <div class="d-flex flex-wrap gap-2 my-4" id="pf-filters">
         <?php foreach ($categories as $slug => $label): ?>
-            <button
-                type="button"
-                class="pf-filter-btn <?= $slug === $initialTrack ? "active" : "" ?>"
-                data-filter="<?= htmlspecialchars($slug, ENT_QUOTES, "UTF-8") ?>"
-            >
+            <button type="button" class="pf-filter-btn <?= $slug === $initialTrack ? "active" : "" ?>"
+                data-filter="<?= htmlspecialchars($slug, ENT_QUOTES, "UTF-8") ?>">
                 <?= htmlspecialchars($label, ENT_QUOTES, "UTF-8") ?>
             </button>
         <?php endforeach; ?>
@@ -114,11 +111,8 @@ if ($result) {
             }
             ?>
 
-            <div
-                class="pf-track-section"
-                data-section="<?= htmlspecialchars($slug, ENT_QUOTES, "UTF-8") ?>"
-                style="<?= $initialTrack === $slug ? "" : "display:none;" ?>"
-            >
+            <div class="pf-track-section" data-section="<?= htmlspecialchars($slug, ENT_QUOTES, "UTF-8") ?>"
+                style="<?= $initialTrack === $slug ? "" : "display:none;" ?>">
                 <?php if (empty($topics)): ?>
                     <div class="alert alert-info">
                         No resources available in this category yet.
@@ -141,37 +135,37 @@ if ($result) {
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".pf-filter-btn");
-    const sections = document.querySelectorAll(".pf-track-section");
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".pf-filter-btn");
+        const sections = document.querySelectorAll(".pf-track-section");
 
-    buttons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            const filter = this.getAttribute("data-filter");
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const filter = this.getAttribute("data-filter");
 
-            buttons.forEach(function (btn) {
-                btn.classList.remove("active");
+                buttons.forEach(function (btn) {
+                    btn.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+                sections.forEach(function (section) {
+                    section.style.display =
+                        section.getAttribute("data-section") === filter ? "" : "none";
+                });
+
+                const url = new URL(window.location.href);
+
+                if (filter === "all") {
+                    url.searchParams.delete("track");
+                } else {
+                    url.searchParams.set("track", filter);
+                }
+
+                window.history.replaceState({}, "", url);
             });
-
-            this.classList.add("active");
-
-            sections.forEach(function (section) {
-                section.style.display =
-                    section.getAttribute("data-section") === filter ? "" : "none";
-            });
-
-            const url = new URL(window.location.href);
-
-            if (filter === "all") {
-                url.searchParams.delete("track");
-            } else {
-                url.searchParams.set("track", filter);
-            }
-
-            window.history.replaceState({}, "", url);
         });
     });
-});
 </script>
 
 <?php include_once("includes/footer.php"); ?>

@@ -26,12 +26,16 @@ if (!$result) {
 
 $tracks = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-$enrolledCourseIds=[];
-if(isset($_SESSION['user_id']) && ($_SESSION['role']??'')==='student'){
-    $uid=(int)$_SESSION['user_id'];
-    $q=mysqli_prepare($conn,'SELECT course_id FROM course_enrollments WHERE user_id=?');
-    mysqli_stmt_bind_param($q,'i',$uid);mysqli_stmt_execute($q);$rr=mysqli_stmt_get_result($q);
-    while($r=mysqli_fetch_assoc($rr))$enrolledCourseIds[]=(int)$r['course_id'];mysqli_stmt_close($q);
+$enrolledCourseIds = [];
+if (isset($_SESSION['user_id']) && ($_SESSION['role'] ?? '') === 'student') {
+    $uid = (int) $_SESSION['user_id'];
+    $q = mysqli_prepare($conn, 'SELECT course_id FROM course_enrollments WHERE user_id=?');
+    mysqli_stmt_bind_param($q, 'i', $uid);
+    mysqli_stmt_execute($q);
+    $rr = mysqli_stmt_get_result($q);
+    while ($r = mysqli_fetch_assoc($rr))
+        $enrolledCourseIds[] = (int) $r['course_id'];
+    mysqli_stmt_close($q);
 }
 
 $homeTracks = array_filter($tracks, function ($track) {
@@ -138,7 +142,9 @@ $trackSlugs = [
                                 <?php endforeach; ?>
                             </div>
                             <div class="trackcard-buttons d-flex align-items-center gap-3 mt-3">
-                                <button type="button" class="enroll-track <?=in_array((int)$track['id'],$enrolledCourseIds,true)?'enrolled':''?>" data-course-id="<?=$track['id']?>" <?=in_array((int)$track['id'],$enrolledCourseIds,true)?'disabled':''?>><?=in_array((int)$track['id'],$enrolledCourseIds,true)?'Enrolled':'Enroll'?></button>
+                                <button type="button"
+                                    class="enroll-track <?= in_array((int) $track['id'], $enrolledCourseIds, true) ? 'enrolled' : '' ?>"
+                                    data-course-id="<?= $track['id'] ?>" <?= in_array((int) $track['id'], $enrolledCourseIds, true) ? 'disabled' : '' ?>><?= in_array((int) $track['id'], $enrolledCourseIds, true) ? 'Enrolled' : 'Enroll' ?></button>
                                 <a href="Resources-page.php?track=<?= urlencode($slug) ?>" class="explore-link">Explore
                                     <span>→</span></a>
                             </div>
@@ -287,7 +293,7 @@ $trackSlugs = [
 
 
         <div class="text-center mt-5">
-            <a href="events.php" class="explore-btn" target="_blank">Explore All events <i
+            <a href="students/events.php" class="explore-btn" target="_blank">Explore All events <i
                     class="bi bi-arrow-right"></i></a>
         </div>
     </div>
@@ -337,4 +343,15 @@ $trackSlugs = [
     });
 </script>
 
-<div class="modal fade" id="enrollSuccessModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content student-modal"><div class="success-icon">✓</div><h3>Enrollment Successful!</h3><p>You are now enrolled in this track.</p><button class="modal-action learn-more-btn" data-bs-dismiss="modal">Continue</button></div></div></div><script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.enroll-track').forEach(btn=>btn.addEventListener('click',async()=>{if(btn.disabled)return;const fd=new FormData();fd.append('course_id',btn.dataset.courseId);const old=btn.textContent;btn.disabled=true;try{const r=await fetch('enroll.php',{method:'POST',body:fd});const d=await r.json();if(!d.success)throw Error(d.message);btn.textContent='Enrolled';btn.classList.add('enrolled');bootstrap.Modal.getOrCreateInstance(document.getElementById('enrollSuccessModal')).show();}catch(e){btn.disabled=false;btn.textContent=old;alert(e.message);}}));});</script><?php include_once "includes/footer.php"; ?>
+<div class="modal fade" id="enrollSuccessModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content student-modal">
+            <div class="success-icon">✓</div>
+            <h3>Enrollment Successful!</h3>
+            <p>You are now enrolled in this track.</p><button class="modal-action learn-more-btn"
+                data-bs-dismiss="modal">Continue</button>
+        </div>
+    </div>
+</div>
+<script>document.addEventListener('DOMContentLoaded', () => { document.querySelectorAll('.enroll-track').forEach(btn => btn.addEventListener('click', async () => { if (btn.disabled) return; const fd = new FormData(); fd.append('course_id', btn.dataset.courseId); const old = btn.textContent; btn.disabled = true; try { const r = await fetch('enroll.php', { method: 'POST', body: fd }); const d = await r.json(); if (!d.success) throw Error(d.message); btn.textContent = 'Enrolled'; btn.classList.add('enrolled'); bootstrap.Modal.getOrCreateInstance(document.getElementById('enrollSuccessModal')).show(); } catch (e) { btn.disabled = false; btn.textContent = old; alert(e.message); } })); });</script>
+<?php include_once "includes/footer.php"; ?>

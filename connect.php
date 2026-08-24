@@ -4,8 +4,8 @@ class Connect
 {
     private const host_name = "localhost";
     private const user_name = "root";
-    private const password = "";
-    private const db = "tech_journey"; 
+    private const password = "ةهىش2006";
+    private const db = "tech_journey";
 
     private $conn;
 
@@ -43,7 +43,7 @@ class Connect
         return false;
     }
 
-    public function select($table):array
+    public function select($table): array
     {
         $rows = $this->conn->query("SELECT * FROM $table");
 
@@ -53,11 +53,11 @@ class Connect
 
         return [];
     }
-    
-    public function selectOne(string $table ,int $id ):array
+
+    public function selectOne(string $table, int $id): array
     {
         $row = $this->conn->query("SELECT * FROM $table WHERE id = $id limit 1");
-        if ($row -> num_rows >0) {
+        if ($row->num_rows > 0) {
             $data = $row->fetch_assoc();
             return $data;
         }
@@ -65,14 +65,14 @@ class Connect
     }
 
 
-        public function update (array $post ,string $table , int $id) : bool 
+    public function update(array $post, string $table, int $id): bool
     {
-        $fieldValue =[];
+        $fieldValue = [];
         foreach ($post as $key => $value) {
             $fieldValue[] = "$key = '$value'";
         }
         // print_r($fieldValue);
-        $fieldValueString = implode(',' ,$fieldValue);
+        $fieldValueString = implode(',', $fieldValue);
         // print "<br>"$fieldValue;
         // print_r($post);
         // $this->con->query("UPDATE $table set 'user_name = value ,email = value ,password = vlue' where $id ");
@@ -81,35 +81,35 @@ class Connect
         return false;
     }
 
-        public function login(string $email, string $password): array
-        {
-
-            $row = $this->conn->query("SELECT * FROM client where email='$email'  and  password = '$password' ");
-            if ($row->num_rows > 0) {
-                $data = $row->fetch_assoc();
-                return $data;
-            }
-            return [];
-        }
-
-        public function count(string $table, string $column): int
-        {
-            $row = $this->conn->query("SELECT COUNT(DISTINCT $column) as total FROM $table");
-            $data = $row->fetch_assoc();
-            return (int) $data['total'];
-        }
-
-    public function delete (string $table , int $id):bool
+    public function login(string $email, string $password): array
     {
-      if( $this->conn->query("DELETE FROM $table WHERE id = $id"))
-        return true;
-      return false;
+
+        $row = $this->conn->query("SELECT * FROM client where email='$email'  and  password = '$password' ");
+        if ($row->num_rows > 0) {
+            $data = $row->fetch_assoc();
+            return $data;
+        }
+        return [];
+    }
+
+    public function count(string $table, string $column): int
+    {
+        $row = $this->conn->query("SELECT COUNT(DISTINCT $column) as total FROM $table");
+        $data = $row->fetch_assoc();
+        return (int) $data['total'];
+    }
+
+    public function delete(string $table, int $id): bool
+    {
+        if ($this->conn->query("DELETE FROM $table WHERE id = $id"))
+            return true;
+        return false;
     }
 }
 
-$conn=mysqli_connect("localhost","root","","tech_journey");
-if(!$conn){
-    die("Database connection failed: ".mysqli_connect_error());
+$conn = mysqli_connect("localhost", "root", "ةهىش2006", "tech_journey");
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
 }
-mysqli_set_charset($conn,"utf8mb4");
+mysqli_set_charset($conn, "utf8mb4");
 ?>

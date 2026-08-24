@@ -1283,7 +1283,6 @@ section {
   box-shadow: 0 5px 14px rgba(79, 70, 229, 0.12);
 }
 
-
 /* =========================================================
    ENROLLED BUTTON
    ========================================================= */
@@ -1318,771 +1317,6 @@ section {
   outline: none !important;
   transform: none !important;
 }
-
-
-/* =========================================================
-   STUDENT PROFILE PAGE
-   ========================================================= */
-
-.student-profile-page {
-  padding: 115px 0 70px;
-  background: #f7f8fc;
-  min-height: calc(100vh - 80px);
-}
-
-.student-profile-page .profile-shell {
-  max-width: 1150px;
-  margin: 0 auto;
-}
-
-
-/* =========================================================
-   PROFILE HEADER
-   ========================================================= */
-
-.student-profile-page .profile-top {
-  background: #ffffff;
-  border: 1px solid #e8e5f2;
-  border-radius: 20px;
-  padding: 28px 32px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 8px 30px rgba(34, 28, 70, 0.06);
-}
-
-.student-profile-page .avatar {
-  width: 88px;
-  height: 88px;
-  flex: 0 0 88px;
-  border-radius: 50%;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: linear-gradient(
-    135deg,
-    #eee9ff,
-    #f3e8ff
-  );
-
-  color: #5727c9;
-  font-size: 27px;
-  font-weight: 800;
-
-  border: 3px solid #ffffff;
-
-  box-shadow: 0 5px 18px rgba(79, 70, 229, 0.15);
-}
-
-.student-profile-page .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.student-profile-page .profile-top h1 {
-  margin: 0 0 6px;
-  color: #111827;
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.3;
-}
-
-.student-profile-page .profile-top .muted {
-  color: #64748b;
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   PROFILE SECTIONS
-   ========================================================= */
-
-.student-profile-page .profile-section {
-  background: #ffffff;
-  border: 1px solid #e8e5f2;
-  border-radius: 20px;
-  padding: 28px;
-  margin-bottom: 25px;
-  box-shadow: 0 8px 30px rgba(34, 28, 70, 0.05);
-}
-
-.student-profile-page .section-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  margin-bottom: 22px;
-}
-
-.student-profile-page .section-head h2 {
-  margin: 0;
-  color: #111827;
-  font-size: 21px;
-  font-weight: 800;
-}
-
-
-/* =========================================================
-   PROFILE BUTTONS
-   ========================================================= */
-
-.student-profile-page .learn-more-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 18px;
-  min-height: 40px;
-
-  border-radius: 10px;
-
-  background: linear-gradient(
-    135deg,
-    #4f46e5,
-    #7c3aed
-  ) !important;
-
-  color: #ffffff !important;
-  border: none !important;
-
-  text-decoration: none !important;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-
-  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.16);
-}
-
-.student-profile-page .learn-more-btn:hover {
-  color: #ffffff !important;
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
-}
-
-
-/* =========================================================
-   MY DATA
-   ========================================================= */
-
-.student-profile-page .data-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.student-profile-page .data-box {
-  padding: 17px 18px;
-
-  background: #faf9ff;
-
-  border: 1px solid #eeeafd;
-
-  border-radius: 13px;
-
-  transition: all 0.25s ease;
-}
-
-.student-profile-page .data-box:hover {
-  border-color: #ddd5ff;
-  background: #f8f6ff;
-  transform: translateY(-2px);
-}
-
-.student-profile-page .data-box small {
-  display: block;
-  color: #858da0;
-  margin-bottom: 6px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.student-profile-page .data-box strong {
-  color: #18213a;
-  font-size: 14px;
-  word-break: break-word;
-}
-
-
-/* =========================================================
-   OLD PROFILE CARD SUPPORT
-   ========================================================= */
-
-.student-profile-page .student-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.student-profile-page .student-track-card,
-.student-profile-page .student-event-card {
-  border: 1px solid #e5e7ef;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 8px 30px rgba(34, 28, 70, 0.07);
-}
-
-.student-profile-page .student-track-card img,
-.student-profile-page .student-event-card img {
-  width: 100%;
-  height: 175px;
-  object-fit: cover;
-}
-
-.student-profile-page .card-inner {
-  padding: 18px;
-}
-
-.student-profile-page .card-inner h3 {
-  font-size: 18px;
-  margin: 0 0 8px;
-}
-
-.student-profile-page .card-inner p {
-  font-size: 14px;
-}
-
-.student-profile-page .card-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-
-/* =========================================================
-   PROFILE COURSE / EVENT CARDS
-   ========================================================= */
-
-.student-profile-track-grid,
-.student-profile-event-grid {
-  margin-top: 0;
-}
-
-.student-profile-track-card,
-.student-profile-event-card {
-  height: 100%;
-  border-radius: 18px !important;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.student-profile-track-card:hover,
-.student-profile-event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.12) !important;
-}
-
-
-/* Event card image */
-
-.student-profile-event-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.student-profile-event-card .track-image {
-  height: 220px;
-  overflow: hidden;
-}
-
-.student-profile-event-card .track-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.student-profile-event-card:hover .track-image img {
-  transform: scale(1.04);
-}
-
-.student-profile-event-card .track-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.student-profile-event-card .home-event-category {
-  margin-top: 0;
-  margin-bottom: 4px;
-}
-
-.student-profile-event-card .home-event-price {
-  margin-top: 8px;
-}
-
-
-/* =========================================================
-   CARD ACTIONS
-   ========================================================= */
-
-.student-profile-card-actions {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between !important;
-  gap: 10px;
-  margin-top: auto;
-  padding-top: 18px;
-}
-
-.student-profile-card-actions .explore-link {
-  margin-left: 0 !important;
-}
-
-.student-profile-card-actions .profile-course-remove {
-  margin-left: auto;
-}
-
-.booked-event-label {
-  display: inline-flex;
-  align-items: center;
-  color: #22c55e;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   REMOVE / CANCEL BUTTON
-   ========================================================= */
-
-.student-profile-page .remove-btn,
-.student-profile-event-card .remove-btn,
-.student-profile-track-card .remove-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 40px;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  padding: 9px 14px;
-
-  border-radius: 10px;
-
-  border: 1px solid #fecaca;
-
-  background: #ffffff;
-
-  color: #dc2626;
-
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-}
-
-.student-profile-page .remove-btn:hover,
-.student-profile-event-card .remove-btn:hover,
-.student-profile-track-card .remove-btn:hover {
-  background: #fef2f2;
-  border-color: #fca5a5;
-  color: #b91c1c;
-  transform: translateY(-1px);
-}
-
-.student-profile-page .remove-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-
-/* =========================================================
-   EXPLORE LINK
-   ========================================================= */
-
-.student-profile-page .explore-student,
-.student-profile-card-actions .explore-link {
-  color: #5727c9;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.2s ease;
-}
-
-.student-profile-page .explore-student:hover,
-.student-profile-card-actions .explore-link:hover {
-  color: #4f46e5;
-}
-
-
-/* =========================================================
-   EMPTY STATE
-   ========================================================= */
-
-.student-profile-page .empty-state {
-  text-align: center;
-  padding: 35px 20px;
-
-  color: #858da0;
-
-  background: #faf9ff;
-
-  border: 1px dashed #ddd5ff;
-
-  border-radius: 14px;
-
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   PROFILE EDIT PAGE
-   ========================================================= */
-
-.profile-edit-page {
-  padding: 115px 0 70px;
-  background: #f7f8fc;
-  min-height: calc(100vh - 80px);
-}
-
-.profile-edit-card {
-  max-width: 800px;
-  margin: auto;
-
-  background: #ffffff;
-
-  border: 1px solid #e5e7ef;
-  border-radius: 20px;
-
-  padding: 30px;
-
-  box-shadow: 0 8px 30px rgba(34, 28, 70, 0.07);
-}
-
-.profile-edit-card h1 {
-  font-size: 28px;
-  font-weight: 800;
-  color: #111827;
-}
-
-.profile-edit-card .form-label {
-  font-weight: 600;
-  color: #18213a;
-}
-
-.profile-edit-card .form-control {
-  border-radius: 11px;
-  border: 1px solid #e2e8f0;
-  padding: 11px 14px;
-  transition: all 0.2s ease;
-}
-
-.profile-edit-card .form-control:focus {
-  border-color: #7c3aed;
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.10);
-}
-
-
-/* =========================================================
-   PROFILE PHOTO EDIT
-   ========================================================= */
-
-.profile-photo-edit {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin: 15px 0;
-}
-
-.profile-photo-edit .avatar {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #eee9ff;
-  color: #5727c9;
-
-  font-weight: 800;
-}
-
-.profile-photo-edit img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.photo-file-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.photo-file-wrap input {
-  max-width: 100%;
-}
-
-.delete-photo {
-  border: 1px solid #fecaca;
-  color: #dc2626;
-  background: #fff;
-  border-radius: 9px;
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-.delete-photo:hover {
-  background: #fef2f2;
-}
-
-
-/* =========================================================
-   SUCCESS / ACTION MODAL
-   ========================================================= */
-
-.student-modal {
-  text-align: center;
-  padding: 30px;
-  border: 0;
-  border-radius: 18px;
-}
-
-.student-modal .success-icon {
-  width: 64px;
-  height: 64px;
-
-  border-radius: 50%;
-
-  background: #dcfce7;
-  color: #16a34a;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 34px;
-  font-weight: 800;
-
-  margin: 0 auto 15px;
-}
-
-.student-modal .remove-icon {
-  background: #fee2e2;
-  color: #dc2626;
-}
-
-.modal-action {
-  border: 0;
-  border-radius: 10px;
-  padding: 10px 22px;
-  font-weight: 700;
-
-  background: linear-gradient(
-    135deg,
-    #4f46e5,
-    #7c3aed
-  ) !important;
-
-  color: #fff !important;
-
-  transition: all 0.25s ease;
-}
-
-.modal-action:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.20);
-}
-
-
-/* =========================================================
-   INSTRUCTOR PROFILE EVENTS
-   ========================================================= */
-
-.instructor-event-card {
-  background: #fff;
-  border: 1px solid #e5e7ef;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(34, 28, 70, 0.06);
-  transition: all 0.25s ease;
-}
-
-.instructor-event-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(79, 70, 229, 0.10);
-}
-
-.instructor-event-main {
-  display: grid;
-  grid-template-columns: 220px 1fr 300px;
-  gap: 22px;
-  padding: 18px;
-  align-items: center;
-}
-
-.instructor-event-image {
-  height: 180px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #f1f2f7;
-}
-
-.instructor-event-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.instructor-event-info h3 {
-  margin: 7px 0;
-  font-size: 21px;
-  color: #18213a;
-}
-
-.instructor-event-info .desc {
-  margin: 0 0 10px;
-  color: #858da0;
-  line-height: 1.6;
-}
-
-.instructor-event-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: #697386;
-  font-size: 13px;
-}
-
-.instructor-event-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-self: stretch;
-  justify-content: center;
-}
-
-.event-edit-delete {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.event-edit-delete .learn-more-btn,
-.event-edit-delete form {
-  flex: 1;
-  margin: 0;
-}
-
-.event-edit-delete .learn-more-btn {
-  min-height: 40px;
-}
-
-.event-edit-delete .remove-btn {
-  width: 100%;
-  height: 40px;
-}
-
-
-/* Students toggle */
-
-.students-toggle {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 10px;
-
-  padding: 11px 14px;
-
-  border: 1px solid #9b7bea;
-  border-radius: 10px;
-
-  background: #fff;
-  color: #5727c9;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: all 0.2s ease;
-}
-
-.students-toggle:hover {
-  background: #f7f3ff;
-  border-color: #7c3aed;
-}
-
-.students-chevron {
-  font-size: 20px;
-  line-height: 1;
-  transition: transform 0.2s;
-}
-
-.students-toggle[aria-expanded="true"] .students-chevron {
-  transform: rotate(180deg);
-}
-
-
-/* Students table */
-
-.instructor-students-collapse {
-  border-top: 1px solid #eceaf3;
-  background: #fbfaff;
-}
-
-.instructor-students-box {
-  padding: 0 18px 18px;
-}
-
-.instructor-students-title {
-  padding: 16px 0 11px;
-  color: #5727c9;
-  font-weight: 800;
-  font-size: 14px;
-}
-
-.instructor-students-table {
-  background: #fff;
-  border: 1px solid #e5e7ef;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.instructor-students-table th {
-  background: #f5f2ff;
-  color: #18213a;
-  font-size: 12px;
-  border-bottom: 1px solid #e5e7ef;
-}
-
-.instructor-students-table td {
-  font-size: 13px;
-  color: #596275;
-  vertical-align: middle;
-}
-
-.instructor-no-students {
-  padding: 16px;
-  background: #fff;
-  border: 1px solid #e5e7ef;
-  border-radius: 12px;
-  color: #858da0;
-  font-size: 13px;
-}
-
 
 /* =========================================================
    NAVBAR POSITIONING
@@ -2139,14 +1373,11 @@ section {
     padding-right: 150px;
   }
 }
-
-
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 
 @media (max-width: 900px) {
-
   .instructor-event-main {
     grid-template-columns: 170px 1fr;
   }
@@ -2159,10 +1390,72 @@ section {
     max-width: 100%;
   }
 }
+/* =========================================================
+   STUDENT SUCCESS / ACTION MODALS
+   Shared by: #bookingSuccessModal, #enrollSuccessModal,
+   #studentActionModal (cancel course/event), and any future
+   modal using the same .student-modal markup.
+   ========================================================= */
 
+.student-modal {
+  border: none;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+}
+
+.student-modal .success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #16a34a;
+  background: #dcfce7;
+}
+
+/* Used for "remove/cancel" style modals (− instead of ✓) */
+.student-modal .success-icon.remove-icon {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.student-modal h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.student-modal p {
+  color: var(--color-text-gray);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.student-modal .modal-action.learn-more-btn {
+  width: 100%;
+  margin-left: 0;
+  justify-content: center;
+  background: var(--gradient-primary);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.student-modal .modal-action.learn-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow-purple-medium);
+}
 
 @media (max-width: 768px) {
-
   .student-profile-page {
     padding: 95px 0 45px;
   }
@@ -2265,9 +1558,7 @@ section {
   }
 }
 
-
 @media (max-width: 576px) {
-
   .student-profile-page .profile-top {
     flex-direction: column;
     text-align: center;

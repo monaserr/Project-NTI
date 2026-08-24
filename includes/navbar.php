@@ -45,6 +45,16 @@ $basePath = ($currentDir === 'students' || $currentDir === 'instructors') ? '../
             href="<?= $basePath ?>css/resourseCss.css?v=<?= filemtime($basePath . 'css/resourseCss.css') ?>">
     <?php endif; ?>
 
+    <?php if ($currentPage == 'profile.php' || $currentPage === 'edit_profile.php'): ?>
+        <link rel="stylesheet"
+            href="<?= $basePath ?>css/profile.css?v=<?= filemtime($basePath . 'css/profile.css') ?>">
+    <?php endif; ?>
+
+    <?php if ( $currentPage === 'edit_profile.php'): ?>
+        <link rel="stylesheet"
+            href="<?= $basePath ?>css/editProfile.css?v=<?= filemtime($basePath . 'css/editProfile.css') ?>">
+    <?php endif; ?>
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">

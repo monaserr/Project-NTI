@@ -27,7 +27,12 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-h1,
+.topPage {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-top: 10px;
+}
 h2,
 h3,
 h4 {
@@ -39,7 +44,7 @@ p {
 }
 
 .hero {
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 28px;
 }
 
@@ -235,7 +240,6 @@ p {
   transform: translateX(3px);
 }
 
-
 .roadmap {
   display: flex;
   align-items: center;
@@ -387,47 +391,6 @@ p {
   font-weight: 600;
 }
 
-.empty-message {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 60px 20px;
-  text-align: center;
-  color: var(--text-light);
-}
-
-.assess-banner {
-  margin: 30px 0 60px;
-  background: linear-gradient(120deg, #5122b8, #6d3de8, #8b63f3);
-  border-radius: 22px;
-  padding: 38px 40px;
-  color: white;
-  box-shadow: 0 18px 40px rgba(109, 61, 232, 0.18);
-}
-
-.assess-banner h3 {
-  color: white;
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.assess-banner p {
-  color: #eee9ff;
-  margin: 0;
-}
-
-.assessment-btn {
-  color: var(--primary);
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  padding: 11px 22px;
-}
-
-.assessment-btn:hover {
-  color: var(--primary-dark);
-}
-
 .compare-section {
   margin-bottom: 60px;
 }
@@ -442,38 +405,46 @@ p {
 .compare-title h2 {
   font-size: 22px;
   margin: 0;
+  color: var(--color-text-dark);
 }
 
 .compare-title span {
-  color: var(--muted);
+  color: var(--color-text-gray);
   font-size: 12px;
 }
 
 .compare-table {
-  background: white;
-  border: 1px solid var(--border);
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
   margin: 0;
 }
 
 .compare-table thead th {
-  background: var(--purple-light);
-  color: var(--primary-dark);
+  background: var(--color-bg-badge);
+  color: var(--color-primary);
   font-family: "Sora", sans-serif;
   font-size: 13px;
   padding: 15px;
 }
 
 .compare-table tbody td {
-  color: var(--text);
+  color: var(--color-text-gray-alt);
   padding: 15px;
   font-size: 13.5px;
 }
 
 .badge-avg {
-  background: var(--purple-light);
-  color: var(--primary-dark);
+  display: inline-flex;
+  align-items: center;
+  background: var(--gradient-primary);
+  color: #ffffff;
   font-weight: 700;
+  font-size: 12.5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px var(--shadow-purple-light);
 }
+
 @media (max-width: 768px) {
   .hero {
     padding-top: 45px;

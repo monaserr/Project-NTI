@@ -16,7 +16,18 @@ document.querySelectorAll(".evt-filter-btn").forEach((button) => {
     });
   });
 });
+const eventImage = document.getElementById("event_image");
+const eventFileName = document.getElementById("eventFileName");
 
+eventImage.addEventListener("change", function () {
+    if (this.files.length > 0) {
+        eventFileName.textContent = this.files[0].name;
+        eventFileName.classList.add("selected");
+    } else {
+        eventFileName.textContent = "No file chosen";
+        eventFileName.classList.remove("selected");
+    }
+});
 function openBooking(title, price, id, date, location, imageSrc) {
   document.getElementById("modalEventName").innerText = title;
   document.getElementById("modalPrice").innerText =

@@ -1,0 +1,311 @@
+/* =========================================================
+   EDIT PROFILE — self-contained (same classes as edit_events.php)
+   All custom properties are defined locally so this file works
+   even if home.css / evt.css variables aren't loaded on this page.
+   ========================================================= */
+
+:root {
+  --color-primary: #4f46e5;
+  --color-primary-alt: #7c3aed;
+  --color-text-dark: #111827;
+  --color-text-gray: #64748b;
+  --color-border: #e2e8f0;
+  --color-border-hover: #7c3aed;
+  --color-bg-white: #ffffff;
+  --shadow-purple-light: rgba(124, 58, 237, 0.15);
+  --text-muted: #64748b;
+}
+
+.evt-page-wrapper {
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.evt-page-wrapper .text-purple {
+  color: #6f42c1 !important;
+}
+
+.evt-page-wrapper .alert {
+  border-radius: 12px;
+  border: none;
+  padding: 13px 17px;
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+.evt-page-wrapper .alert-danger {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+/* =========================
+   Card
+========================= */
+
+.evt-edit-form-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border) !important;
+  border-radius: 20px !important;
+  padding: 35px !important;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.evt-edit-form-card h2 {
+  margin-bottom: 30px !important;
+  color: var(--color-text-dark);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* =========================
+   Labels / Inputs
+========================= */
+
+.evt-edit-form-card .form-label {
+  display: block;
+  margin-bottom: 8px !important;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.evt-edit-form-card .form-control {
+  margin-bottom: 5px;
+  border-radius: 11px !important;
+  border: 1px solid var(--color-border) !important;
+  background: #ffffff;
+  color: #1f2937;
+  padding: 11px 14px;
+  font-size: 14px;
+  width: 100%;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.evt-edit-form-card .form-control:focus {
+  outline: none;
+  border-color: var(--color-primary-alt) !important;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12) !important;
+}
+
+.evt-edit-form-card .form-control:disabled {
+  background-color: #f8fafc;
+  color: var(--color-text-gray);
+  cursor: not-allowed;
+}
+
+/* =========================
+   Current photo preview
+========================= */
+
+.evt-edit-form-card .current-photo-preview {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: block;
+}
+
+.evt-edit-form-card .text-muted {
+  color: var(--color-text-gray) !important;
+}
+
+/* =========================
+   Custom file input (Choose File)
+========================= */
+
+.custom-file {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.custom-file input[type="file"] {
+  display: none;
+}
+
+.choose-file-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 135px;
+  padding: 11px 18px;
+  border-radius: 10px 0 0 10px;
+  background: var(--gradient-primary);
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  margin: 0 !important;
+  transition: 0.25s;
+  box-shadow: 0 5px 15px rgba(109, 40, 217, 0.18);
+  white-space: nowrap;
+}
+
+.choose-file-btn:hover {
+  background: linear-gradient(90deg, #5b21b6, #7c3aed);
+}
+
+.upload-icon {
+  font-size: 16px;
+}
+
+.file-name {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 9px 19px;
+  border: 1px solid #c0c5cd !important;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  background-color: #fafafa;
+  color: #787c82;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-name.selected {
+  color: #5b21b6;
+  background-color: #f5f3ff;
+  border-color: #ddd6fe;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.file-note {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.btn-save {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--gradient-primary);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-save:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.evt-edit-form-card .btn-outline-secondary {
+  background: transparent !important;
+  color: var(--color-text-gray) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evt-edit-form-card .btn-outline-secondary:hover {
+  background: #f3f0ff !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  transform: translateY(-2px);
+}
+
+.evt-edit-form-card .btn-outline-danger {
+  border-radius: 10px !important;
+  font-weight: 600;
+  background: transparent !important;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.evt-edit-form-card .btn-outline-danger:hover {
+  background: #c63333 !important;
+  color: #fff !important;
+}
+
+.evt-edit-form-card .d-flex.gap-2 {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.evt-edit-form-card .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.evt-edit-form-card .row > [class^="col-"] {
+  padding: 0 10px;
+}
+
+.evt-edit-form-card .col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.evt-edit-form-card .mb-3 {
+  margin-bottom: 18px;
+}
+
+.evt-edit-form-card .mb-4 {
+  margin-bottom: 24px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+  .evt-page-wrapper {
+    padding-top: 20px;
+    padding-bottom: 45px;
+  }
+
+  .evt-edit-form-card {
+    padding: 22px !important;
+  }
+
+  .evt-edit-form-card .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .evt-edit-form-card .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .custom-file {
+    flex-direction: column;
+  }
+
+  .choose-file-btn {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+
+  .file-name {
+    border-radius: 0 0 8px 8px;
+    border-left: 1px solid #c0c5cd !important;
+    border-top: 0;
+  }
+}

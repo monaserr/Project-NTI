@@ -60,6 +60,7 @@ if ($role === 'instructor') {
                             Name</small><strong><?= htmlspecialchars($user['first_name']) ?></strong></div>
                     <div class="data-box"><small>Last Name</small><strong><?= htmlspecialchars($user['last_name']) ?></strong>
                     </div>
+                    <div class="data-box"><small>Role:</small> <strong><?= htmlspecialchars(ucfirst($role)) ?></strong></div>
                     <div class="data-box"><small>Email</small><strong><?= htmlspecialchars($user['email']) ?></strong></div>
                     <div class="data-box"><small>Password</small><strong>••••••••</strong></div>
                 </div>
@@ -227,8 +228,33 @@ $initials = student_initials($user);
                                     <h3><?= htmlspecialchars($course['title']) ?></h3>
                                     <p class="desc"><?= htmlspecialchars($course['description']) ?></p>
                                     <div class="trackcard-buttons student-profile-card-actions">
+
+                                       <?php
+                                        $courseTitle = strtolower(trim($course['title']));
+
+                                        $trackMap = [
+                                            'frontend' => 'frontend',
+                                            'frontend development' => 'frontend',
+
+                                            'backend' => 'backend',
+                                            'backend development' => 'backend',
+
+                                            'ai' => 'ai-ml',
+                                            'ai & machine learning' => 'ai-ml',
+                                            'ai and machine learning' => 'ai-ml',
+
+                                            'cybersecurity' => 'cybersecurity',
+                                            'cyber security' => 'cybersecurity',
+
+                                            'data science' => 'data-science',
+                                            'data-science' => 'data-science',
+                                        ];
+
+                                        $trackSlug = $trackMap[$courseTitle] ?? 'all';
+                                        ?>
+
                                         <a class="explore-link"
-                                            href="Resources-page.php?track=<?= urlencode(strtolower(str_replace([' ', '&'], '-', $course['title']))) ?>#top">
+                                        href="Resources-page.php?track=<?= urlencode($trackSlug) ?>&course_id=<?= (int)$course['id'] ?>#top">
                                             Explore <span>→</span>
                                         </a>
                                         <button type="button" class="remove-btn profile-course-remove"

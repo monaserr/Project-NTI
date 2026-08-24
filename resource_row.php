@@ -10,7 +10,8 @@
 
     <span class="pf-badge"><?= htmlspecialchars($item["badge"], ENT_QUOTES, "UTF-8") ?></span>
 
-    <a href="<?= htmlspecialchars($item["link"], ENT_QUOTES, "UTF-8") ?>" target="_blank" rel="noopener noreferrer" class="pf-link-btn text-decoration-none" title="Open Resource">
+    <a href="<?= htmlspecialchars($item["link"], ENT_QUOTES, "UTF-8") ?>" target="_blank" rel="noopener noreferrer"
+        class="pf-link-btn text-decoration-none" title="Open Resource">
         <i class="bi bi-box-arrow-up-right"></i>
     </a>
 </div>

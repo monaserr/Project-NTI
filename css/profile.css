@@ -1,0 +1,515 @@
+/* =========================================================
+   PROFILE PAGE
+   Built on the same design tokens as the home page
+   (--color-primary, --color-text-*, --shadow-purple-*, etc.)
+   ========================================================= */
+
+.student-profile-page {
+  background: var(--color-bg-light);
+  padding: 130px 0 80px;
+  min-height: 100vh;
+}
+
+.profile-shell {
+  max-width: 1100px;
+}
+
+/* ---------- Header ---------- */
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 30px 35px;
+  margin-bottom: 35px;
+  box-shadow: 0 10px 30px var(--shadow-purple-light);
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-icon);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 6px 16px var(--shadow-purple-medium);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-top h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+}
+
+.profile-top .muted {
+  color: var(--color-text-gray);
+  font-size: 15px;
+}
+
+/* ---------- Section shell ---------- */
+.profile-section {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 30px 35px;
+  margin-bottom: 30px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  position: relative;
+  padding-left: 14px;
+}
+
+.section-head h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--gradient-primary);
+}
+
+/* Explore/Edit-style link inside a section head is already
+   covered by .learn-more-btn — keep it flush right, no forced margin */
+.section-head .learn-more-btn {
+  margin-left: 0;
+}
+
+/* ---------- My Data grid ---------- */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.data-box {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: 0.25s ease;
+}
+
+.data-box:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 20px var(--shadow-purple-light);
+}
+
+.data-box small {
+  display: block;
+  color: var(--color-text-gray);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.data-box strong {
+  color: var(--color-text-dark);
+  font-size: 15px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* ---------- Empty state ---------- */
+.empty-state {
+  text-align: center;
+  color: var(--color-text-gray);
+  background: var(--color-bg-light);
+  border: 1px dashed var(--color-border);
+  border-radius: 14px;
+  padding: 40px 20px;
+  font-size: 15px;
+}
+
+/* ---------- Student course / event cards ---------- */
+.student-profile-track-card,
+.student-profile-event-card {
+  height: 100%;
+}
+
+.student-profile-track-card .track-content,
+.student-profile-event-card .track-content {
+  padding: 22px 24px 24px;
+}
+
+.student-profile-track-card h3,
+.student-profile-event-card h3 {
+  margin-top: 12px;
+  font-size: 17px;
+}
+
+.student-profile-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.student-profile-card-actions .explore-link {
+  width: auto;
+  flex: 1;
+  margin-left: 0;
+  padding: 10px 16px;
+}
+
+.booked-event-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: var(--color-bg-badge);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.booked-event-label::before {
+  content: "✓";
+  font-weight: 700;
+}
+
+/* ---------- Cancel / remove buttons ---------- */
+.remove-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.remove-btn:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.25);
+}
+
+.remove-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- Instructor: event management cards ---------- */
+.instructor-events-list {
+  --gap: 20px;
+}
+
+.instructor-event-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.instructor-event-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 15px 35px var(--shadow-purple-light);
+}
+
+.instructor-event-main {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 26px;
+}
+
+.instructor-event-image {
+  width: 100%;
+  height: 130px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instructor-event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instructor-event-info h3 {
+  margin: 10px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.instructor-event-info .desc {
+  color: var(--color-text-gray);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.instructor-event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 13px;
+  color: var(--color-text-gray-alt);
+  margin-bottom: 8px;
+}
+
+.instructor-event-meta strong {
+  color: var(--color-text-dark);
+}
+
+.instructor-event-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  min-width: 190px;
+}
+
+.event-edit-delete {
+  display: flex;
+  gap: 10px;
+}
+
+.event-edit-delete .learn-more-btn {
+  margin-left: 0;
+  padding: 9px 18px;
+}
+
+.event-edit-delete form {
+  margin: 0;
+}
+
+.students-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-bg-badge);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.students-toggle:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.students-chevron {
+  transition: transform 0.25s ease;
+}
+
+.students-toggle[aria-expanded="true"] .students-chevron {
+  transform: rotate(180deg);
+}
+
+/* ---------- Students booked panel ---------- */
+.instructor-students-collapse {
+  border-top: 1px solid var(--color-border);
+}
+
+.instructor-students-box {
+  padding: 22px 26px;
+  background: var(--color-bg-light);
+}
+
+.instructor-students-title {
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.instructor-students-table {
+  background: var(--color-bg-white);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.instructor-students-table thead th {
+  background: var(--color-bg-badge);
+  color: var(--color-primary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border: none;
+  padding: 12px 16px;
+}
+
+.instructor-students-table tbody td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--color-text-gray-alt);
+  border-color: var(--color-border);
+  vertical-align: middle;
+}
+
+.instructor-students-table tbody strong {
+  color: var(--color-text-dark);
+}
+
+.instructor-no-students {
+  color: var(--color-text-gray);
+  font-size: 14px;
+  padding: 10px 4px;
+}
+
+/* ---------- Action modal (success / remove) ---------- */
+.student-modal {
+  border-radius: 20px;
+  border: none;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.student-modal .success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.student-modal .success-icon.remove-icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.student-modal h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.student-modal p {
+  color: var(--color-text-gray);
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.student-modal .modal-action {
+  margin-left: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .instructor-event-main {
+    grid-template-columns: 1fr;
+  }
+
+  .instructor-event-actions {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .student-profile-page {
+    padding: 110px 0 60px;
+  }
+
+  .profile-top {
+    flex-direction: column;
+    text-align: center;
+    padding: 26px 20px;
+  }
+
+  .profile-section {
+    padding: 24px 20px;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .student-profile-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .student-profile-card-actions .explore-link {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .event-edit-delete {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .instructor-event-actions {
+    width: 100%;
+  }
+
+  .students-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}

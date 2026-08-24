@@ -24,8 +24,10 @@ if (isset($_POST['title'])) {
             "../upload/" . $imageName
         );
 
-        $_POST['image'] = $imageName; 
-    } 
+        $_POST['image'] = $imageName;
+    }
+
+    $_POST['instructor_id'] = $_SESSION['user_id'];
 
     if ($objCon->insert($_POST, "events")) {
         header('location: add_events.php?add=success');
@@ -89,7 +91,8 @@ $eventsList = $objCon->select("events");
 
                         <div class="col-md-6 mb-3">
                             <label for="created_at" class="form-label">Created At</label>
-                            <input type="date" class="form-control" id="created_at" name="created_at" value="<?= date('Y-m-d'); ?>">
+                            <input type="date" class="form-control" id="created_at" name="created_at"
+                                value="<?= date('Y-m-d'); ?>">
                         </div>
                     </div>
                     <div class="mb-4">
@@ -98,7 +101,21 @@ $eventsList = $objCon->select("events");
                     </div>
                     <div class="mb-4">
                         <label for="event_image" class="form-label">Event Banner Image</label>
-                        <input type="file" class="form-control" id="event_image" name="image">
+
+                        <div class="custom-file">
+                            <input type="file" name="image" id="event_image" accept="image/jpeg,image/png,image/webp">
+
+                            <label for="event_image" class="choose-file-btn">
+                                <span class="upload-icon">↑</span>
+                                Choose File
+                            </label>
+
+                            <span class="file-name" id="eventFileName">No file chosen</span>
+                        </div>
+
+                        <small class="file-note">
+                            Optional - JPG, PNG or WEBP, maximum 2MB
+                        </small>
                     </div>
 
                     <button type="submit" class="btn btn-event w-100 py-2 fw-bold">
@@ -114,11 +131,9 @@ $eventsList = $objCon->select("events");
         <?php foreach ($eventsList as $event) { ?>
             <div class="col-md-4 mb-4 evt-card-item">
                 <div class="card form-card shadow-sm border-0 h-100">
-                    
-                    <img src="../upload/<?= $event['image']; ?>" 
-                         alt="<?= $event['title']; ?>" 
-                         style="height: 180px; object-fit: cover; border-radius: 10px;" 
-                         class="card-img-top mb-2">
+
+                    <img src="../upload/<?= $event['image']; ?>" alt="<?= $event['title']; ?>"
+                        style="height: 180px; object-fit: cover; border-radius: 10px;" class="card-img-top mb-2">
 
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-center mb-2">
@@ -127,9 +142,9 @@ $eventsList = $objCon->select("events");
                             </span>
                             <small class="text-muted"><?= $event['created_at']; ?></small>
                         </div>
-                        
+
                         <h5 class="card-title fw-bold text-dark"><?= $event['title']; ?></h5>
-                        
+
                         <p class="card-text text-muted small mb-2">
                             <?= $event['description']; ?>
                         </p>
@@ -143,13 +158,12 @@ $eventsList = $objCon->select("events");
 
                         <div class="mt-auto d-flex gap-2">
                             <a href="edit_events.php?id=<?= $event['id']; ?>"
-                               class="btn btn-outline-purple btn-sm flex-fill">
+                                class="btn btn-outline-purple btn-sm flex-fill">
                                 Edit
                             </a>
 
-                            <form action="" method="post"
-                                  class="flex-fill"
-                                  onsubmit="return confirm('Are you sure you want to delete this event?');">
+                            <form action="" method="post" class="flex-fill"
+                                onsubmit="return confirm('Are you sure you want to delete this event?');">
                                 <input type="hidden" name="id" value="<?= $event['id']; ?>">
                                 <button type="submit" class="btn btn-outline-danger btn-sm w-100">
                                     Delete

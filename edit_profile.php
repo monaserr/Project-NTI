@@ -67,46 +67,124 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 $pageTitle = 'Edit Profile';
 include 'includes/navbar.php';
-$initials = student_initials($user); ?>
-<main class="profile-edit-page">
-    <div class="container">
-        <div class="profile-edit-card">
-            <h1>Edit Profile</h1>
-            <p>Update any of your personal data.</p><?php if ($error): ?>
-                <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div><?php endif; ?>
-            <form method="post" enctype="multipart/form-data">
-                <div class="row g-3">
-                    <div class="col-md-6"><label class="form-label">First Name</label><input class="form-control"
-                            name="first_name" value="<?= htmlspecialchars($user['first_name']) ?>" required></div>
-                    <div class="col-md-6"><label class="form-label">Last Name</label><input class="form-control"
-                            name="last_name" value="<?= htmlspecialchars($user['last_name']) ?>" required></div>
-                    <div class="col-12"><label class="form-label">Email</label><input class="form-control" type="email"
-                            name="email" value="<?= htmlspecialchars($user['email']) ?>" required></div>
-                    <div class="col-md-6"><label class="form-label">New Password</label><input class="form-control"
-                            type="password" name="password" placeholder="Leave empty to keep current"></div>
-                    <div class="col-md-6"><label class="form-label">Confirm New Password</label><input
-                            class="form-control" type="password" name="password_confirmation"
-                            placeholder="Repeat new password"></div>
-                </div><label class="form-label mt-4">Profile Photo</label>
-                <div class="profile-photo-edit">
-                    <div class="avatar"><?php if (!empty($user['image'])): ?><img
-                                src="<?= htmlspecialchars($user['image']) ?>"
-                                alt="Profile Photo"><?php else: ?><span><?= htmlspecialchars($initials) ?></span><?php endif; ?>
+$initials = student_initials($user);
+?>
+
+<div class="evt-page-wrapper container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card evt-edit-form-card p-4 mb-5">
+                <h2 class="text-center mb-4 fw-bold text-purple">Edit Profile</h2>
+
+                <?php if ($error): ?>
+                    <div class="alert alert-danger">
+                        <?= htmlspecialchars($error) ?>
                     </div>
-                    <div><strong>Profile Photo</strong>
-                        <div class="text-muted small">Choose Photo — the selected file will appear below.</div>
+                <?php endif; ?>
+
+                <form method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                value="<?= htmlspecialchars($user['first_name']) ?>" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                value="<?= htmlspecialchars($user['last_name']) ?>" required>
+                        </div>
                     </div>
-                </div>
-                <div class="photo-file-wrap"><input class="form-control" type="file" name="image"
-                        accept=".jpg,.jpeg,.png,.webp" id="profilePhotoInput"><?php if (!empty($user['image'])): ?><button
-                            type="submit" name="delete_photo" value="1" class="delete-photo">Delete
-                            Photo</button><?php endif; ?></div>
-                <div id="selectedPhotoPath" class="small text-muted mt-2">No new photo selected</div>
-                <div class="d-flex gap-2 mt-4"><button class="learn-more-btn" type="submit">Save Changes</button><a
-                        class="login-btn" href="profile.php">Cancel</a></div>
-            </form>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                value="<?= htmlspecialchars($user['email']) ?>" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <input type="text" class="form-control" id="role"
+                                value="<?= htmlspecialchars(ucfirst($_SESSION['role'] ?? '')) ?>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="password" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Leave empty to keep current">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="password_confirmation" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="password_confirmation"
+                                name="password_confirmation" placeholder="Repeat new password">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label d-block">Current Photo</label>
+                        <?php if (!empty($user['image'])): ?>
+                            <img src="<?= htmlspecialchars($user['image']) ?>" alt="Profile Photo"
+                                style="height: 120px; width: 120px; object-fit: cover; border-radius: 50%;" class="mb-2">
+                        <?php else: ?>
+                            <p class="text-muted small">No photo uploaded</p>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="profilePhotoInput" class="form-label">Replace Profile Photo (optional)</label>
+
+                        <div class="custom-file">
+                            <input type="file" name="image" id="profilePhotoInput" accept=".jpg,.jpeg,.png,.webp">
+
+                            <label for="profilePhotoInput" class="choose-file-btn">
+                                <span class="upload-icon">↑</span>
+                                Choose File
+                            </label>
+
+                            <span class="file-name" id="selectedPhotoPath">No file chosen</span>
+                        </div>
+
+                        <small class="file-note">
+                            Optional - JPG, PNG or WEBP, maximum 5MB
+                        </small>
+
+                        <?php if (!empty($user['image'])): ?>
+                            <button type="submit" name="delete_photo" value="1" class="btn btn-outline-danger btn-sm mt-3">
+                                Delete Photo
+                            </button>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-save w-100 py-2 fw-bold">
+                            Save Changes
+                        </button>
+                        <a href="profile.php" class="btn btn-outline-secondary w-100 py-2 fw-bold text-center">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</main>
-<script>document.getElementById('profilePhotoInput').addEventListener('change', e => { document.getElementById('selectedPhotoPath').textContent = e.target.files.length ? e.target.value : 'No new photo selected'; });</script>
+</div>
+
+<script>
+    document.getElementById('profilePhotoInput').addEventListener('change', function (e) {
+        const label = document.getElementById('selectedPhotoPath');
+        if (e.target.files.length) {
+            label.textContent = e.target.files[0].name;
+            label.classList.add('selected');
+        } else {
+            label.textContent = 'No file chosen';
+            label.classList.remove('selected');
+        }
+    });
+</script>
+
 <?php include 'includes/footer.php'; ?>
